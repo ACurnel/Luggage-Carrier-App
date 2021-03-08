@@ -60,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
 
                 }else {
                     /* Validate the user inputs */
-                    validate(userName, userPassword);
+                    startActivity(new Intent(MainActivity.this, MapsActivity.class));
+                    //validate(userName, userPassword); ******* UNCOMMENT THIS IS EASIER FOR TESTING
 
                 }
             }
@@ -83,7 +84,7 @@ public class MainActivity extends AppCompatActivity {
                     FirebaseUser user = firebaseAuth.getCurrentUser();
                     if(user.isEmailVerified()) {
                         Toast.makeText(MainActivity.this, "Login Successful", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(MainActivity.this, Connect.class));
+                        startActivity(new Intent(MainActivity.this, TestDB.class));
                     }else{
                         Toast.makeText(MainActivity.this, "Email Not Verified", Toast.LENGTH_SHORT).show();
                     }
